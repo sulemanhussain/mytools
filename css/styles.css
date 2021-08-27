@@ -21,11 +21,10 @@ body {
 
 .keypad {
     font-size: 5rem;
-    height: 70vh;
+    height: 62vh;
 }
 
 .buttons {
-    margin-top: 16vh;
     font-size: 1.5rem;
 }
 
