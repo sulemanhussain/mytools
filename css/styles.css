@@ -1,0 +1,67 @@
+body {
+    background: rgb(0, 0, 0);
+    padding: 1.5rem;
+}
+
+.display {
+    color: #fff;
+    font-size: 10rem;
+    text-align: end;
+    height: 20%;
+    width: 90%;
+    margin: 5rem auto;
+}   
+
+.keypad {
+    font-size: 5rem;
+    height: 80%;
+}
+
+.buttons {
+    font-size: 4rem;
+}
+
+.button {
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+}
+
+button {
+    font-size: inherit;
+    height: 8rem;
+    width: 8rem;
+    min-width: 8rem;
+    margin: 1rem;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+}
+
+.orange button {
+    background: rgb(255, 166, 0);
+    border: rgb(255, 166, 0);
+    color: #fff;
+}
+
+.grey button {
+    background: rgb(194, 194, 194);
+    border: rgb(194, 194, 194);;
+    color: black;
+}
+
+.darkgrey button {
+    background: rgb(99, 98, 98);
+    border: rgb(99, 98, 98);
+    color: #fff;
+}
+
+.large {
+    width: 47.4%;
+}
+
+.large button {
+    width: 80%;
+}
