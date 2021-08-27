@@ -2,89 +2,102 @@
 <html>
     <title>Calculator - MSH</title>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 </html>
 <body class="container-fluid full-height">
     <main >
         <section class="col-12 display">
-                <label id="lblDisplay">100</label>
+                <label id="lblTotal">0</label>
+                <br>
+                <p id="lblCalculation">0</p>
         </section>
         <section class="col-12 keypad">
             <div class="buttons">
                 <div class="row">
                     <div class="button grey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="head">AC</button>
+                        <button class="head operator" value="clear">AC</button>
                     </div>
                     <div class="button grey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="head">+/-</button>
+                        <button class="head operator" value="backspace">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+                                <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+                                <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+                              </svg>
+                        </button>
                     </div>
                     <div class="button grey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="head">&percnt;</button>
+                        <button class="head operator" value="modules">&percnt;</button>
                     </div>
                     <div class="button orange col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="operator">&divide;</button>
+                        <button class="operator" value="divide">&divide;</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                            <button class="number">7</button>
+                            <button class="number" value="7">7</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">8</button>
+                        <button class="number" value="8">8</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">9</button>
+                        <button class="number" value="9">9</button>
                     </div>
                     <div class="button orange col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="operator">&times;</button>
+                        <button class="operator" value="multiply">&times;</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">4</button>
+                        <button class="number" value="4">4</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">5</button>
+                        <button class="number" value="5">5</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">6</button>
+                        <button class="number" value="6">6</button>
                     </div>
                     <div class="button orange col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="operator">&minus;</button>
+                        <button class="operator" value="subtract">&minus;</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">1</button>
+                        <button class="number" value="1">1</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">2</button>
+                        <button class="number" value="2">2</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">3</button>
+                        <button class="number" value="3">3</button>
                     </div>
                     <div class="button orange col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="operator">&plus;</button>
+                        <button class="operator" value="add">&plus;</button>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="button large darkgrey col-6 col-sm-6 col-md-6 col-xl-6 col-xs-6">
-                        <button class="number">0</button>
+                        <button class="number" value="0">0</button>
                     </div>
                     <div class="button darkgrey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="number">.</button>
+                        <button class="number" value=".">.</button>
                     </div>
                     <div class="button orange col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
-                        <button class="operator">&equals;</button>
+                        <button class="operator" value="equal">&equals;</button>
                     </div>
                 </div>
             </div>
         </section>
+        <footer class="text-center">
+            <p>Developed by <em>Md Suleman Hussain</em></p>
+        </footer>
     </main>
+    
 </body>
+
+<script type="text/javascript" src="./js/script.js" ></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
