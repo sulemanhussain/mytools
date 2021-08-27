@@ -14,17 +14,18 @@ body {
 .display {
     font-size: 4rem;
     text-align: end;
-    height: 20%;
+    height: 30vh;
     width: 90%;
     margin: 1rem auto;
 }   
 
 .keypad {
     font-size: 5rem;
-    height: 80%;
+    height: 70vh;
 }
 
 .buttons {
+    margin-top: 16vh;
     font-size: 1.5rem;
 }
 
