@@ -1,15 +1,14 @@
 body {
     background: rgb(0, 0, 0);
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .display {
-    color: #fff;
-    font-size: 10rem;
+    font-size: 4rem;
     text-align: end;
     height: 20%;
     width: 90%;
-    margin: 5rem auto;
+    margin: 1rem auto;
 }   
 
 .keypad {
@@ -18,7 +17,7 @@ body {
 }
 
 .buttons {
-    font-size: 4rem;
+    font-size: 1.5rem;
 }
 
 .button {
@@ -29,9 +28,9 @@ body {
 
 button {
     font-size: inherit;
-    height: 8rem;
-    width: 8rem;
-    min-width: 8rem;
+    height: 5rem;
+    width: 5rem;
+    min-width: 5rem;
     margin: 1rem;
     border-radius: 5rem;
     -webkit-border-radius: 5rem;
@@ -40,11 +39,21 @@ button {
     -o-border-radius: 5rem;
 }
 
+.orange {
+    background: rgb(255, 166, 0);
+}
+
+
 .orange button {
     background: rgb(255, 166, 0);
     border: rgb(255, 166, 0);
     color: #fff;
 }
+
+.grey {
+    background: rgb(194, 194, 194);
+}
+
 
 .grey button {
     background: rgb(194, 194, 194);
@@ -52,6 +61,9 @@ button {
     color: black;
 }
 
+.darkgrey {
+    background: rgb(99, 98, 98);
+}
 .darkgrey button {
     background: rgb(99, 98, 98);
     border: rgb(99, 98, 98);
