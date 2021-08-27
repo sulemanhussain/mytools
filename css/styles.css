@@ -53,6 +53,7 @@ button {
     -moz-border-radius: 5rem;
     -ms-border-radius: 5rem;
     -o-border-radius: 5rem;
+    touch-action: manipulation;
 }
 
 .orange {
