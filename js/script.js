@@ -21,6 +21,7 @@ function getInput() {
     }
     selectedNumer = selectedNumer + ' ' + currentValue;
     document.getElementById("lblCalculation").innerText = selectedNumer;
+    document.getElementById("lblCalculation").scrollLeft += 100;
 }
 
 function calculateInput() {
@@ -52,10 +53,18 @@ function calculateInput() {
             var data = selectedNumer.replaceAll(' ', '').split(/(?=[-+*\%/])/);
             const result = math.parse(selectedNumer.replaceAll(' ', ''));
             const finalResult = result.compile();
+            let printResult = finalResult.evaluate();
+            if(printResult % 1 !== 0) {
+                let lengthofDecimals = printResult.toString().split('.')[1].length;
+                if(lengthofDecimals > 5){
+                    lengthofDecimals = 5;
+                }
+                printResult = printResult.toFixed(lengthofDecimals);
+            }
             // for (let i = 0; i < data.length; i++) {
             //   total = displayTotal(total, data[i]);
             // }
-            document.getElementById("lblTotal").innerText = finalResult.evaluate(); // total;
+            document.getElementById("lblTotal").innerText = printResult; // total;
             break;
         case "clear":
             selectedNumer = '0';
@@ -68,6 +77,7 @@ function calculateInput() {
             break;
     }
     document.getElementById("lblCalculation").innerText = selectedNumer;
+    document.getElementById("lblCalculation").scrollLeft += 100;
 }
 
 
