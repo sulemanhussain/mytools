@@ -131,7 +131,7 @@ var winningProbablity = [
     [2, 4, 6]
 ];
 var gameStat = ['', '', '', '', '', '', '', '', ''];
-
+var clearButtonClicked =  true;
 var _boardCell = document.getElementsByClassName("tictactoe-board-cell");
 Array.from(_boardCell).forEach(function(element) {
     element.addEventListener('click', fillCell);
@@ -150,7 +150,7 @@ Array.from(_boardCell).forEach(function(element) {
         }
         _currentCell.setAttribute("disabled", true);
         currentTurnFlag = !currentTurnFlag;
-        setInterval(function() { 
+        setTimeout(function() { 
             gameValidator();
         }, 300);
     }
@@ -160,7 +160,10 @@ Array.from(_boardCell).forEach(function(element) {
      if(gameStat.indexOf("X") == -1 && gameStat.indexOf("O") == -1) {
          return false;
      }
-     var confirmation = confirm("Are you sure to reset the game");
+     var confirmation = true;
+     if(clearButtonClicked == true) {
+        confirmation = confirm("Are you sure to reset the game");
+     } 
      if(confirmation) {
         _boardCell.forEach(function(cell) {
             cell.textContent = "";
@@ -168,10 +171,12 @@ Array.from(_boardCell).forEach(function(element) {
         });
         gameStat = ['', '', '', '', '', '', '', '', ''];
         currentTurnFlag = true;
+        clearButtonClicked == true;
     }
  }
 
  function gameValidator() {
+    clearButtonClicked = false;
     winningProbablity.forEach(function(data){
         var a = gameStat[data[0]];
         var b = gameStat[data[1]];
