@@ -27,7 +27,6 @@ body {
     -o-font-size: xx-large;
     white-space: nowrap;
     overflow: auto;
-    letter-spacing: -4px;
 }
 
 .keypad {
