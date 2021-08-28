@@ -22,6 +22,7 @@ function getInput() {
     selectedNumer = selectedNumer + ' ' + currentValue;
     document.getElementById("lblCalculation").innerText = selectedNumer;
     document.getElementById("lblCalculation").scrollLeft += 100;
+    printTotal();
 }
 
 function calculateInput() {
@@ -50,21 +51,7 @@ function calculateInput() {
             selectedNumer = selectedNumer + ' % ';
             break;
         case "equal":
-            var data = selectedNumer.replaceAll(' ', '').split(/(?=[-+*\%/])/);
-            const result = math.parse(selectedNumer.replaceAll(' ', ''));
-            const finalResult = result.compile();
-            let printResult = finalResult.evaluate();
-            if(printResult % 1 !== 0) {
-                let lengthofDecimals = printResult.toString().split('.')[1].length;
-                if(lengthofDecimals > 5){
-                    lengthofDecimals = 5;
-                }
-                printResult = printResult.toFixed(lengthofDecimals);
-            }
-            // for (let i = 0; i < data.length; i++) {
-            //   total = displayTotal(total, data[i]);
-            // }
-            document.getElementById("lblTotal").innerText = printResult; // total;
+            printTotal();
             break;
         case "clear":
             selectedNumer = '0';
@@ -80,7 +67,22 @@ function calculateInput() {
     document.getElementById("lblCalculation").scrollLeft += 100;
 }
 
-
+function printTotal(){
+    //var data = selectedNumer.replaceAll(' ', '').split(/(?=[-+*\%/])/);
+    const result = math.parse(selectedNumer.replaceAll(' ', ''));
+    const finalResult = result.compile();
+    let printResult = finalResult.evaluate();
+    if(printResult != Infinity) {
+        if(printResult % 1 !== 0) {
+            let lengthofDecimals = printResult.toString().split('.')[1].length;
+            if(lengthofDecimals > 5){
+                lengthofDecimals = 5;
+            }
+            printResult = printResult.toFixed(lengthofDecimals);
+        }
+    }
+    document.getElementById("lblTotal").innerText = printResult;
+}
 
 function displayTotal(total, inputValue) {
     let arithmaticOperator = inputValue.substring(0, 1);
