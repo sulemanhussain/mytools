@@ -157,12 +157,18 @@ Array.from(_boardCell).forEach(function(element) {
  }
 
  function clearBoard() {
-    _boardCell.forEach(function(cell) {
-        cell.textContent = "";
-        cell.setAttribute("disabled", false);
-    });
-    gameStat = ['', '', '', '', '', '', '', '', ''];
-    currentTurnFlag = true;
+     if(gameStat.indexOf("X") == -1 && gameStat.indexOf("O") == -1) {
+         return false;
+     }
+     var confirmation = confirm("Are you sure to reset the game");
+     if(confirmation) {
+        _boardCell.forEach(function(cell) {
+            cell.textContent = "";
+            cell.setAttribute("disabled", false);
+        });
+        gameStat = ['', '', '', '', '', '', '', '', ''];
+        currentTurnFlag = true;
+    }
  }
 
  function gameValidator() {
