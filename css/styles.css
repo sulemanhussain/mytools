@@ -128,6 +128,7 @@ button {
 .tictactoe-score {
     color: #fff;
     text-align: center;
+    font-size: 2.5vh;
 }
 
 .tictactoe-score label {
@@ -135,5 +136,8 @@ button {
 }
 
 .tictactoe-buttons button {
-    height: 3em;
+    height: 2.5em;
+    width: 35vw;
+    margin: 0 auto;
+    font-size: 2.5vh;
 }

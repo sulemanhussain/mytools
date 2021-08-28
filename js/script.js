@@ -130,34 +130,38 @@ Array.from(_boardCell).forEach(function(element) {
  function fillCell(){
     var _currentCell = this;
     var currentIndex = _currentCell.getAttribute("data-index");
-    if(currentTurnFlag) {
-        this.innerText = "X";
-        gameStat[currentIndex] = "X";
-    }  else {
-        this.innerText = "O";
-        gameStat[currentIndex] = "O";
+    if(this.innerText == ""){
+       if(currentTurnFlag) {
+            this.innerText = "X";
+            gameStat[currentIndex] = "X";
+        } else {
+            this.innerText = "O";
+            gameStat[currentIndex] = "O";
+        }
+        _currentCell.setAttribute("disabled", true);
+        currentTurnFlag = !currentTurnFlag;
+        setInterval(function() { 
+            gameValidator();
+        }, 300);
     }
-    currentTurnFlag = !currentTurnFlag;
-    setInterval(function() { 
-        gameValidator();
-    }, 300);
  }
 
  function clearBoard() {
     _boardCell.forEach(function(cell) {
         cell.textContent = "";
+        cell.setAttribute("disabled", false);
     });
     gameStat = ['', '', '', '', '', '', '', '', ''];
     currentTurnFlag = true;
  }
 
- function gameValidator(){
+ function gameValidator() {
     winningProbablity.forEach(function(data){
         var a = gameStat[data[0]];
         var b = gameStat[data[1]];
         var c = gameStat[data[2]];
-        if(a != "" && b != "" && c != ""){
-            if(a == b && b == c){
+        if(a != "" && b != "" && c != "") {
+            if(a == b && b == c) {
                 alert("Player " + a +" won the game. ");
                 clearBoard();
                 var result = 0;
@@ -175,4 +179,14 @@ Array.from(_boardCell).forEach(function(element) {
             }
         }
     });
+
+    if(gameStat.indexOf("") == -1) {
+        alert("Draw");
+        clearBoard();
+        return false;
+    }
+ }
+
+ function newGame(){
+     window.location.reload();
  }
