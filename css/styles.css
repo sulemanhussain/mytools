@@ -100,3 +100,40 @@ button {
 }
 
 
+
+.tictactoe {
+    margin: 0 auto;
+}
+
+.tictactoe-board {
+    font-size: 8vh;
+    color: #fff;
+}
+
+.tictactoe-board div {
+    text-align: center;
+    min-height: 15vh;
+    height: 15vh;
+    vertical-align: middle;
+}
+
+.tictactoe-board-border-right {
+    border-right: 0.25em solid black;
+}
+
+.tictactoe-board-border-bottom {
+    border-bottom: 0.25em solid black;
+}
+
+.tictactoe-score {
+    color: #fff;
+    text-align: center;
+}
+
+.tictactoe-score label {
+    margin: 0 1.5em;
+}
+
+.tictactoe-buttons button {
+    height: 3em;
+}

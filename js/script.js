@@ -26,7 +26,10 @@ function getInput() {
 function calculateInput() {
     let currentOperator = this.value;
     if(selectedNumer == "0"){
-        selectedNumer = '';
+        return false;
+    }
+    if(isNaN(selectedNumer.substring(selectedNumer.length-2, selectedNumer.length).trim())){
+        selectedNumer = selectedNumer.substring(0, selectedNumer.length-2);
     }
     total = parseFloat(total);
     switch(currentOperator){
