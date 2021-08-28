@@ -9,48 +9,32 @@
 <body class="container-fluid full-height bg-dark bg-opacity-30">
     <main class="tictactoe col-9 justify-content-center">
         <section class="row tictactoe-score">
+            <h1>Tic Tac Toe</h1>
+            <hr/>
             <h3>Score Board</h3>
             <h5>
-                <label> X : <em>1</em></label>
-                <label> O : <em>4</em></label>
+                <label> X : <em><span id="txtX">0</span></em></label>
+                <label> O : <em><span id="txtO">0</span></em></label>
             </h5>
         </section>
         <br/>
         <section>
             <div class="row tictactoe-board">
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-bottom tictactoe-board-border-right">
-                    <label data-index="0" value="">X</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-right tictactoe-board-border-bottom">
-                    <label data-index="1" value="">O</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-bottom">
-                    <label data-index="2" value="">O</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-bottom tictactoe-board-border-right">
-                    <label data-index="3" value="">X</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-bottom tictactoe-board-border-right">
-                    <label data-index="4" value="">X</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-bottom">
-                    <label data-index="5" value="">O</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-right">
-                    <label data-index="6" value="">X</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-border-right">
-                    <label data-index="7" value="">X</label>
-                </div>
-                <div class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4">
-                    <label data-index="8" value="">X</label>
-                </div>
+                <div data-index="0" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-bottom tictactoe-board-border-right"></div>
+                <div data-index="1" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-right tictactoe-board-border-bottom"></div>
+                <div data-index="2" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-bottom"></div>
+                <div data-index="3" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-bottom tictactoe-board-border-right"></div>
+                <div data-index="4" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-bottom tictactoe-board-border-right"></div>
+                <div data-index="5" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-bottom"></div>
+                <div data-index="6" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-right"></div>
+                <div data-index="7" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell tictactoe-board-border-right"></div>
+                <div data-index="8" class="col-4 col-sm-4 col-md-4 col-xl-4 col-xs-4 tictactoe-board-cell"></div>
             </div>
         </section>
         <br/>
         <section>
             <div class="row tictactoe-buttons justify-content-center">
-                <button class="btn btn-warning btn-xs">
+                <button class="btn btn-warning btn-xs" onclick="clearBoard()">
                     Reset
                 </button>
             </div>
