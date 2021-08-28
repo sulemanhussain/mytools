@@ -176,7 +176,6 @@ Array.from(_boardCell).forEach(function(element) {
  }
 
  function gameValidator() {
-    clearButtonClicked = false;
     winningProbablity.forEach(function(data){
         var a = gameStat[data[0]];
         var b = gameStat[data[1]];
@@ -184,6 +183,7 @@ Array.from(_boardCell).forEach(function(element) {
         if(a != "" && b != "" && c != "") {
             if(a == b && b == c) {
                 alert("Player " + a +" won the game. ");
+                clearButtonClicked = false;
                 clearBoard();
                 var result = 0;
                 if(a == "X"){
@@ -202,6 +202,7 @@ Array.from(_boardCell).forEach(function(element) {
     });
 
     if(gameStat.indexOf("") == -1) {
+        clearButtonClicked = false;
         alert("Draw");
         clearBoard();
         return false;
