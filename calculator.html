@@ -4,6 +4,7 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 </html>
 <body class="container-fluid full-height">
     <main >
@@ -14,6 +15,15 @@
         </section>
         <section class="col-12 keypad">
             <div class="buttons">
+                <div class="row justify-content-start">
+                    <div class="col-xs-10 checkbox">
+                        <label>
+                            <input id="chkCalculatorType" data-toggle="toggle" data-on="Scientific" data-off="Standard" type="checkbox" onchange="toggleCalculator()">
+                            <span><em id="txtCalculaterType"> Calculator</em></span>
+                        </label>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="button grey col-3 col-sm-3 col-md-3 col-xl-3 col-xs-3">
                         <button class="head operator" value="clear">AC</button>
@@ -99,4 +109,7 @@
 </body>
 
 <script type="text/javascript" src="./js/script.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

@@ -47,10 +47,12 @@ function calculateInput() {
             break;
         case "equal":
             var data = selectedNumer.replaceAll(' ', '').split(/(?=[-+*\%/])/);
-            for (let i = 0; i < data.length; i++) {
-              total = displayTotal(total, data[i]);
-            }
-            document.getElementById("lblTotal").innerText = total;
+            const result = math.parse(selectedNumer.replaceAll(' ', ''));
+            const finalResult = result.compile();
+            // for (let i = 0; i < data.length; i++) {
+            //   total = displayTotal(total, data[i]);
+            // }
+            document.getElementById("lblTotal").innerText = finalResult.evaluate(); // total;
             break;
         case "clear":
             selectedNumer = '0';
@@ -71,6 +73,7 @@ function displayTotal(total, inputValue) {
     let arithmaticOperator = inputValue.substring(0, 1);
     if(isNaN(arithmaticOperator)) {
         var _value = parseFloat(inputValue.substring(1, inputValue.length));
+        
         switch(arithmaticOperator) {
             case "+":
                 total = total +  _value;
@@ -92,4 +95,8 @@ function displayTotal(total, inputValue) {
         total = parseFloat(inputValue);
     }
     return total;
+}
+
+function toggleCalculator(){
+    $("#chkCalculatorType").val();
 }

@@ -14,13 +14,17 @@ body {
 .display {
     font-size: 4rem;
     text-align: end;
-    height: 30vh;
+    height: 20vh;
     width: 90%;
     margin: 1rem auto;
 }   
 
 .display p {
     font-size: xx-large;
+    -webkit-font-size: xx-large;
+    -moz-font-size: xx-large;
+    -ms-font-size: xx-large;
+    -o-font-size: xx-large;
 }
 
 .keypad {
@@ -94,3 +98,5 @@ button {
 .large button {
     width: 80%;
 }
+
+
